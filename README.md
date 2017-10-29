@@ -21,6 +21,12 @@ Features
 
 You should be able to run this with only Docker, no other dependencies.
 
+### Continuous integration
+
+Uses CircleCI 2.0 integration: `./.circleci/config.yml` tells Circle CI to run `./scripts/test.sh` on every commit, resulting in the following badge which can be placed on the project homepage:
+
+[![CircleCI](https://circleci.com/gh/dcycle/starterkit-php.svg?style=svg)](https://circleci.com/gh/dcycle/starterkit-php)
+
 ### Automated testing
 
 Uses the [phpunit] image to run automated tests. To run automated tests, call `./scripts/unit-tests.sh`.  
