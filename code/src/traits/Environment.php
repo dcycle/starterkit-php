@@ -8,16 +8,38 @@ namespace myproject\traits;
 trait Environment {
 
   /**
-   * Mockable wrapper around getenv().
+   * Mockable wrapper around getenv(), with exception handling.
+   *
+   * @param string $name
+   *   Name of the environment variable.
+   * @param bool $required
+   *   Whether the environment variable is required or not.
+   *
+   * @return string
+   *   The value of the environment variable.
+   *
+   * @throws \Exception
    */
-  public function getEnv($name) {
-    return getenv($name);
+  public function getEnv(string $name, bool $required = TRUE) : string {
+    $return = getenv($name);
+    if (!$return && $required) {
+      throw new \Exception('Please make sure the environment variable ' . $name . ' is set.');
+    }
+    return (string) $return;
   }
 
   /**
-   * Mockable wrapper around scandir().
+   * Mockable wrapper around scandir(), with exception handling.
+   *
+   * @param string $directory
+   *   Path to a directory.
+   *
+   * @return array
+   *   List of files.
+   *
+   * @throws \Exception
    */
-  public function scanDir($directory) {
+  public function scanDir(string $directory) : array {
     $return = @scandir($directory);
     if (!is_array($return)) {
       throw new \Exception('Could not scan directory ' . $directory);

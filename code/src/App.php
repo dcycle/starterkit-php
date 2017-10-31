@@ -25,7 +25,7 @@ class App {
   public function printSquareRootOfNumberOfFilesInDirectory() {
     $directory = $this->getEnv('DIRECTORY');
     if (!$directory) {
-      throw new Exception('Please set the DIRECTORY environment variable.');
+      throw new \Exception('Please set the DIRECTORY environment variable.');
     }
     $files = $this->scanDir($directory);
     $sqrt = $this->squareRoot(count($files));
