@@ -28,7 +28,7 @@ class AppTest extends TestCase {
    * @cover ::printSquareRootOfNumberOfFilesInDirectory
    * @dataProvider providerPrintSquareRootOfNumberOfFilesInDirectory
    */
-    public function testPrintSquareRootOfNumberOfFilesInDirectory(string $message, array $dir, string $expected) {
+  public function testPrintSquareRootOfNumberOfFilesInDirectory(string $message, array $dir, string $expected) {
     $object = $this->getMockBuilder(App::class)
       // NULL = no methods are mocked; otherwise list the methods here.
       ->setMethods([
@@ -103,14 +103,6 @@ class AppTest extends TestCase {
       ->setMethods(NULL)
       ->disableOriginalConstructor()
       ->getMock();
-
-    // Examples of how to mock methods.
-    // $object->method('one')
-    //   ->willReturn('value');
-    // $object->method('two')
-    //   ->will($this->returnCallback(array($this, 'callback')));
-    // $object->method('three')
-    //   ->will($this->throwException(new \Exception));
 
     if ($exception) {
       $this->expectException($exception);

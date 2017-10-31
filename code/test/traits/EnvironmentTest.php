@@ -31,7 +31,7 @@ class EnvironmentTest extends TestCase {
    * which uses Environment will confirm that it does not break anything.
    */
   public function testSmokeTest() {
-    $this->assertTrue(is_object(new EnvironmentObject())); 
+    $this->assertTrue(is_object(new EnvironmentObject()));
   }
 
 }
