@@ -43,6 +43,18 @@ The App class uses the singleton trait, and is meant to be used like this:
     ...
     App::instance()->doSomething();
 
+### Environment trait
+
+Classes that wish to interact with their environment yet remain testable can use the `Environment` trait. Code and test examples are provided.
+
+### Entrypoint
+
+We are providing an entrypoint in the form of a procedural code file; you can use this as a starting point for what to insert in your own code. We have added very simple, useless functionality to demonstrate how this works. The code below will output the square root of the number of files in a given directory which is an environment variable:
+
+    docker run -v "$(pwd)":/app \
+      -e DIRECTORY=/var php:7 /bin/bash -c 'php /app/run.php'
+    # 3.605551275464
+
 ### Linting
 
 `./scripts/test.sh` calls `./scripts/lint-php.sh` and `./scripts/lint-sh.sh` which lints shell and php files.
