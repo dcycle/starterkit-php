@@ -29,7 +29,7 @@ Uses CircleCI 2.0 integration: `./.circleci/config.yml` tells Circle CI to run `
 
 ### Automated testing
 
-Uses the [phpunit] image to run automated tests. To run automated tests, call `./scripts/unit-tests.sh`.  
+Uses the [phpunit](https://hub.docker.com/r/phpunit/phpunit) image to run automated tests. To run automated tests, call `./scripts/unit-tests.sh`.  
 
 ### The singleton trait
 
