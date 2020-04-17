@@ -11,10 +11,12 @@ use PHPUnit\Framework\TestCase;
 /**
  * Dummy Singleton for testing.
  */
+// @codingStandardsIgnoreStart
 class SingletonObject {
   use Singleton;
 
 }
+// @codingStandardsIgnoreEnd
 
 /**
  * Test Singleton.
