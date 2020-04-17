@@ -3,7 +3,12 @@
 # Lint php files.
 #
 
-docker run -v "$(pwd)":/code dcycle/php-lint \
+echo 'Linting php. To ignore certain lines, use'
+echo '// @codingStandardsIgnoreStart'
+echo '...'
+echo '// @codingStandardsIgnoreEnd'
+
+docker run --rm -v "$(pwd)":/code dcycle/php-lint:2 \
   --standard=DrupalPractice /code
-docker run -v "$(pwd)":/code dcycle/php-lint \
+docker run --rm -v "$(pwd)":/code dcycle/php-lint:2 \
   --standard=Drupal /code
