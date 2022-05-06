@@ -58,9 +58,3 @@ We are providing an entrypoint in the form of a procedural code file; you can us
 ### Linting
 
 `./scripts/test.sh` calls `./scripts/lint-php.sh` and `./scripts/lint-sh.sh` which lints shell and php files.
-
-### Trigger job
-
-This section contains a random string to trigger a job on CircleCI.
-
-=> Random string is "123"
