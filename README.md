@@ -29,7 +29,7 @@ Uses CircleCI 2.0 integration: `./.circleci/config.yml` tells Circle CI to run `
 
 ### Automated testing
 
-Uses the [phpunit](https://hub.docker.com/r/phpunit/phpunit) image to run automated tests. To run automated tests, call `./scripts/unit-tests.sh`.  
+Uses the [phpunit](https://hub.docker.com/r/dcycle/phpunit) image to run automated tests. To run automated tests, call `./scripts/unit-tests.sh`.  
 
 ### The singleton trait
 
@@ -52,7 +52,7 @@ Classes that wish to interact with their environment yet remain testable can use
 We are providing an entrypoint in the form of a procedural code file; you can use this as a starting point for what to insert in your own code. We have added very simple, useless functionality to demonstrate how this works. The code below will output the square root of the number of files in a given directory which is an environment variable:
 
     docker run -v "$(pwd)":/app \
-      -e DIRECTORY=/var php:7 /bin/bash -c 'php /app/run.php'
+      -e DIRECTORY=/var php:8-alpine /bin/sh -c 'php /app/run.php'
     # 3.605551275464
 
 ### Linting
