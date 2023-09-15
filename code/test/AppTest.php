@@ -5,8 +5,8 @@
  * Test App.
  */
 
-use PHPUnit\Framework\TestCase;
 use myproject\App;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test App.
